@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
+            android:padding="16dp"
+            android:background="@drawable/font_background"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/text_welcome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:text="@string/bienvenue_sur"
+                android:textAlignment="center"
+                android:textColor="@color/connexion"
+                android:textSize="20sp"
+                android:textStyle="italic" />
+
+            <ImageView
+                android:id="@+id/image_textview"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/logo" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/restez"
+                android:textAlignment="center"
+                android:textStyle="italic"
+                android:textColor="@color/connexion"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textStyle="italic"
+                android:text="@string/source_qualit_et_populaire"
+                android:textAlignment="center"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/inscription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="80dp"
+                android:background="@drawable/round_button_inscription"
+                android:backgroundTint="@color/inscription"
+                android:text="@string/inscription"
+                app:backgroundTint="@color/inscription"
+                tools:ignore="InvalidId" />
+
+            <Button
+                android:id="@+id/connexion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:background="@drawable/round_button_connexion"
+                android:backgroundTint="@color/connexion"
+                android:text="@string/connexion"
+                app:backgroundTint="@color/connexion"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

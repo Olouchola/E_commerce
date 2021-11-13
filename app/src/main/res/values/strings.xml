@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="bienvenue_sur">BIENVENUE SUR \n E-commerce</string>
+    <string name="source_qualit_et_populaire">Source , qualité et populaire</string>
+    <string name="restez">Restez chez vous et profiter de nous</string>
+    <string name="connexion">CONNEXION</string>
+    <string name="inscription">INSCRIPTION</string>
+    <string name="adresse_email">Adresse Email</string>
+    <string name="mot_de_passe_oubli">Mot de passe oublié ?</string>
+    <string name="full_name">Full name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="password">Password</string>
+    <string name="s_authentifier">s\'authentifier</string>
+    <string name="se_connecter">Se connecter</string>
+    <string name="no_account">Vous n\' avez pas un compte ? S\'inscrire</string>
+    <string name="have_account">Vous avez déjà un compte ? Se connecter</string>
+</resources>
