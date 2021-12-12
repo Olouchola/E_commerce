@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/content_fragment"
+    tools:context=".EmailVerifyActivity"
+    tools:ignore="MissingClass">
+
+    <TextView
+        android:id="@+id/email_not_verify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Email not Verify!"
+        android:textColor="@color/red"
+        android:visibility="gone"
+        android:textSize="20dp"
+        android:layout_centerInParent="true"
+        />
+    <Button
+        android:id="@+id/verify_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Verify Now"
+        android:visibility="gone"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/email_not_verify"
+        android:backgroundTint="@color/connexion"/>
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:text="Logout"/>
+
+</RelativeLayout>

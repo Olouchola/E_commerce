@@ -15,8 +15,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -34,16 +36,16 @@ public class RegisterActivity extends AppCompatActivity {
     private TextInputEditText passwordText;
     private TextInputEditText passwordconfirme;
     private ProgressDialog progressDialog;
-    private Button connexion;
+    private Button inscription;
     private FirebaseAuth firebaseAuth;
     private FirebaseFirestore fstore;
-String userID;
+    String userID;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         textAccount=findViewById(R.id.account);
-        connexion=findViewById(R.id.connexion_button);
+        inscription=findViewById(R.id.inscription_button);
         getInfoId();
         firebaseAuth=FirebaseAuth.getInstance();
         fstore=FirebaseFirestore.getInstance();
@@ -66,7 +68,7 @@ String userID;
             }
         });
 
-        connexion.setOnClickListener(new View.OnClickListener() {
+        inscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 InitData();
@@ -130,9 +132,12 @@ String userID;
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
-                        Toast.makeText(getApplicationContext(), "Email not send"+e.getMessage(), Toast.LENGTH_SHORT).show();
+                        Log.d("TAG", "Email not send"+e.getMessage());
                     }
                 });
+//                if (fuser!=null){
+//                    sendEmailVerification();
+//                }
                 Toast.makeText(RegisterActivity.this, "User create successful", Toast.LENGTH_SHORT).show();
                 userID=firebaseAuth.getCurrentUser().getUid();
                 DocumentReference documentReference=fstore.collection("users").document(userID);
@@ -150,12 +155,38 @@ String userID;
                         Toast.makeText(getApplicationContext(), ""+e.toString(), Toast.LENGTH_SHORT).show();
                     }
                 });
-                startActivity(new Intent(RegisterActivity.this,DashbordActivity.class));
+                startActivity(new Intent(RegisterActivity.this,EmailVerifyActivity.class));
                 finish();
             }
             else {
                 Toast.makeText(getApplicationContext(), "Error"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                 progressDialog.dismiss();
+            }
+        });
+    }
+
+    private void sendEmailVerification() {
+        FirebaseUser user=FirebaseAuth.getInstance().getCurrentUser();
+//        user.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+//            @Override
+//            public void onSuccess(Void unused) {
+//                Toast.makeText(getApplicationContext(), "Verification email has been send", Toast.LENGTH_SHORT).show();
+//            }
+//        }).addOnFailureListener(new OnFailureListener() {
+//            @Override
+//            public void onFailure(@NonNull Exception e) {
+//                Toast.makeText(getApplicationContext(), "Email not send"+e.getMessage(), Toast.LENGTH_SHORT).show();
+//            }
+//        });
+        user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(), "Verification email has been send", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), "Email has not send", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

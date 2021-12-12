@@ -7,10 +7,15 @@
         <entry key="app/src/main/res/drawable/round_button_inscription.xml" value="0.1" />
         <entry key="app/src/main/res/drawable/round_list.xml" value="0.209375" />
         <entry key="app/src/main/res/layout/activity_dashbord.xml" value="0.18568840579710144" />
+        <entry key="app/src/main/res/layout/activity_email_verifiy.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_email_verify.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_forgot_password.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.16847826086956522" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/second.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/slide_items.xml" value="0.1875" />
       </map>
     </option>
   </component>

@@ -14,4 +14,6 @@
     <string name="se_connecter">Se connecter</string>
     <string name="no_account">Vous n\' avez pas un compte ? S\'inscrire</string>
     <string name="have_account">Vous avez déjà un compte ? Se connecter</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

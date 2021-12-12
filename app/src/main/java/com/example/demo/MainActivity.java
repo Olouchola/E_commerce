@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new Intent(MainActivity.this,login.class);
                 startActivity(intent);
+                finish();
             }
         });
        Inscription.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
            public void onClick(View v) {
                Intent intent=new Intent(MainActivity.this,RegisterActivity.class);
                startActivity(intent);
+               finish();
            }
        });
 
